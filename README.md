@@ -4,10 +4,9 @@ A [BepInEx](https://github.com/BepInEx/BepInEx) 5 plugin for **Zumbi Blocks 2** 
 
 ## Features
 
-- **Configurable Offsets:** Adjust the viewmodel position along all three axis (Right/Left, Up/Down, Forward/Backward) through the BepInEx configuration file.
-- **Smooth Transitions:** Offset changes are applied smoothly using lerp interpolation.
-- **Working ADS:** Automatically returns to the default offset when aiming down sights (ADS).
-- **Flipped Viewmodel:** Optional feature to flip the viewmodel to the left side of your screen.
+- Adjustable offsets through the BepInEx configuration file.
+- Smooth transitions between offset changes (e.g. transitioning from hip to ADS).
+- An option to flip the viewmodel to the left side.
 
 ## Installation
 
