@@ -1,6 +1,6 @@
 # Viewmodel Offset
 
-A [BepInEx](https://github.com/BepInEx/BepInEx) 5 plugin for **Zumbi Blocks 2** that allows you to customize the first-person viewmodel (weapon/arms) position via configurable X, Y, and Z offsets.
+**Viewmodel Offset** is a mod for **Zumbi Blocks 2** that allows you to customize the first-person viewmodel (weapon/arms) position via configurable X, Y, and Z offsets.
 
 ## Features
 
@@ -18,7 +18,7 @@ Zumbi Blocks 2 Open Alpha\BepInEx\plugins\ViewmodelOffset.dll
 
 ## Configuration
 
-On first launch, a configuration file is generated at:
+On first launch with the mod installed, a configuration file is generated at:
 
 ```
 Zumbi Blocks 2 Open Alpha\BepInEx\config\com.theblackvoid.viewmodeloffset.cfg
