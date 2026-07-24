@@ -10,7 +10,7 @@ internal static class PlayerSpineControlPatch
     private static void FixSpine(PlayerSpineControl __instance, ref float ___deviationY)
     {
         var playerMain = __instance.GetComponentInParent<PlayerMain>();
-        if (playerMain != null && !playerMain.ForeignPlayer && ViewmodelOffset.ShouldFlip)
+        if (playerMain != null && !playerMain.ForeignPlayer && ViewmodelOffset.Flip.Value)
         {
             ___deviationY = -___deviationY;
         }

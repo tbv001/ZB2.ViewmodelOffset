@@ -20,7 +20,9 @@ internal static class PlayerMainPatch
         if (spineControl == null || spineControl.FirstPersonTweaks == null)
             return;
 
-        if (ViewmodelOffset.ViewOffset == Vector3.zero)
+        var viewOffset = new Vector3(ViewmodelOffset.XOffset.Value, ViewmodelOffset.YOffset.Value,
+            ViewmodelOffset.ZOffset.Value);
+        if (viewOffset == Vector3.zero)
             return;
 
         var adsFactor = Mathf.Clamp(2f - __instance.arms.fightModeCoef, 0, 1);
@@ -29,7 +31,7 @@ internal static class PlayerMainPatch
 
         var targetField = Traverse.Create(spineControl.FirstPersonTweaks).Field("target");
         var target = targetField.GetValue<FirstPersonTweak.Settings>();
-        target.armsOffset += ViewmodelOffset.ViewOffset * adsFactor;
+        target.armsOffset += viewOffset * adsFactor;
         targetField.SetValue(target);
     }
 }

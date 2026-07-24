@@ -27,8 +27,9 @@ internal static class PlayerCameraPatch
             return;
         }
 
-        if (arms.transform.localScale.x > 0f && ViewmodelOffset.ShouldFlip ||
-            arms.transform.localScale.x < 0f && !ViewmodelOffset.ShouldFlip)
+        var shouldFlip = ViewmodelOffset.Flip.Value;
+        if (arms.transform.localScale.x > 0f && shouldFlip ||
+            arms.transform.localScale.x < 0f && !shouldFlip)
         {
             Flip(arms);
         }
