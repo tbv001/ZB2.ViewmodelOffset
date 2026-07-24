@@ -1,18 +1,18 @@
 using HarmonyLib;
 
-namespace ViewmodelOffset;
+namespace ViewmodelOffset.Patches;
 
 [HarmonyPatch(typeof(PlayerSpineControl))]
-public static class PlayerSpineControlPatch
+internal static class PlayerSpineControlPatch
 {
     [HarmonyPrefix]
     [HarmonyPatch("CorrectSpine")]
-    public static void CorrectSpine_Prefix(PlayerSpineControl __instance)
+    private static void FixSpine(PlayerSpineControl __instance, ref float ___deviationY)
     {
-        PlayerMain pm = __instance.GetComponentInParent<PlayerMain>();
-        if (pm != null && !pm.ForeignPlayer && ViewmodelOffset.shouldFlip)
+        var playerMain = __instance.GetComponentInParent<PlayerMain>();
+        if (playerMain != null && !playerMain.ForeignPlayer && ViewmodelOffset.Flip.Value)
         {
-            __instance.deviationY = -__instance.deviationY;
+            ___deviationY = -___deviationY;
         }
     }
 }
